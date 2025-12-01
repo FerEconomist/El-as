@@ -1,0 +1,283 @@
+/* Reset mínimo */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh;          /* mejor en móviles */
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+
+
+/* --- Header en grid-areas --- */
+header {
+  background: blueviolet;
+  color: #fff;
+  display: grid;
+  gap: 12px;
+  padding: 0;
+  margin: 5PX 10PX;
+
+  /* 4 columnas: gutter izq / col izq / col der / gutter der */
+  grid-template-columns: clamp(0px, 4vw, 100px) 1.3fr 0.5fr clamp(0px, 6vw, 100px); /* <-- sin espacios en 1.2fr / 0.8fr */
+  grid-template-rows: auto auto;
+  grid-template-areas:
+  /* los puntos son areas, pero no la asignamos porque son rellenos*/
+    ". top-left  top-right ."
+    ". bottom-left bottom-right .";
+}
+
+/* Asigno cada bloque a su área (solo los 4 reales; es decir NO los puntos) */
+.top-left-header    { grid-area: top-left; }
+.top-right-header   { grid-area: top-right; }
+.bottom-left-header { grid-area: bottom-left; }
+.bottom-right-header{ grid-area: bottom-right; }
+
+/* Contenido de cada bloque */
+.top-left-header{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;  /* izquierda */
+  gap: 10px;
+}
+
+.top-left-header h1 {
+  margin: 0;
+  font-size: clamp(30px, 6vw, 60px);
+  text-align: center;
+}
+
+.logo {
+  width: clamp(60px, 8vw, 100px);
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+
+.top-right-header{
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;     /* derecha */
+}
+
+.search { 
+   display: flex;
+   flex-wrap: nowrap;
+   justify-content: flex-end;
+   gap: 10px; 
+   width: 100%;
+  }
+
+.search input{
+  margin: 0;
+  padding: .45rem 1.3rem;
+  border: 2px solid currentColor;
+  border-radius: 6px;
+  flex: 1;
+  min-width: 0;
+}
+.search button{
+  margin: 0;
+  padding: .45rem .7rem;
+  cursor: pointer;
+  border: 2px solid currentColor;
+  border-radius: 6px;
+  background: #fff;
+  color: #000;
+}
+
+.bottom-left-header{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;   /* izquierda */
+  margin-bottom: 10px;
+}
+
+.main-nav { display: flex; gap: 10px; flex-wrap: wrap; }
+.main-nav button{
+  font-size: 1rem;
+  padding: .45rem .8rem;
+  background: #fff;
+  color: #000;
+  border: 1px solid #999;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.bottom-right-header{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;     /* derecha */
+  margin-bottom: 10px;
+}
+
+.config{
+  font-size: 1.35rem;
+  line-height: 1;
+  background: #fff;
+  color: #000;
+  border: 1px solid #999;
+  border-radius: 8px;
+  padding: .35rem .55rem;
+  cursor: pointer;
+}
+.config:hover{ background: #f4f4f4; }
+
+
+/* --- Main en 4 areas  --- */
+main {
+  background: rgb(174, 26, 169);
+  margin-inline: 5%;
+  width: 90%;
+  color: #fff;
+  display: grid;
+  gap: 10px;
+  padding: 0;
+
+  /* 2 columnas: col izq / col der */
+  grid-template-columns: 7fr 1fr;
+  grid-template-rows: repeat(7, auto);
+  grid-template-areas:
+    "top-left       right"
+    "bottom-left    right"
+    "bottom-left    right"
+    "bottom-left    right"
+    "bottom-left    right"
+    "bottom-left    right"
+    "bottom-left    right";
+}
+
+/* Asigno cada bloque a su área */
+.top-left-main   { grid-area: top-left; }
+.right-main   { grid-area: right; }
+.bottom-left-main { grid-area: bottom-left; }
+
+
+/* MAIN arriba a la izquierda*/
+.top-left-main {
+  background-color: rgb(196, 198, 255);
+}
+
+/* MAIN  derecha*/
+.right-main {
+  background-color: rgb(255, 251, 196);
+}
+
+.btn-nav {
+  background: #f7f7f7;
+  border: 1px solid #ccc;
+  padding: .45rem .8rem;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+.btn-nav:hover {
+  background: #ededed;
+}
+.btn-nav:active {
+  transform: scale(0.97);
+}
+
+
+#nav-clientes, #nav-presupuestos, #nav-notas {
+  margin-top: 3rem;
+  height: auto;
+  width: 100%;
+  background-color: rgb(255, 230, 196);
+  flex-direction: column;
+  justify-content: center; 
+  align-content: flex-start; 
+  align-items: stretch; 
+  display: none;
+  row-gap: 1rem;
+}
+
+
+
+/* MAIN abajo a la izquierda*/
+.bottom-left-main {
+  background-color: rgb(179, 172, 51);
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-start;  
+  align-items: flex-start;  
+}
+
+
+
+
+
+
+
+footer {
+  background: rgb(23, 88, 219);
+  color: #fff;
+  padding: 12px;
+  margin: 5PX 10PX;
+}
+
+
+
+
+
+
+
+
+/* Escritorio: una sola línea */
+@media (min-width: 768px) {
+  .top-left-header h1 {
+    white-space: nowrap;
+  }
+}
+
+/* Móvil: que pueda partirse si hace falta */
+@media (max-width: 767px) {
+  .top-left-header h1 {
+    white-space: nowrap;
+  }
+  .search{justify-content: flex-start;}
+
+}
+
+@media (max-width: 680px) and (orientation: portrait) {
+
+  .config { display: none; }
+  footer  { display: none; }
+
+  header {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+      "top-left"
+      "top-right"
+      "bottom-left"
+      "bottom-right";
+    gap: 6px;
+  }
+
+  .search { justify-content: flex-start; }
+  .search input { flex: 0.8;}
+}
+
+
+@media (max-width: 680px) and (orientation: landscape) {
+
+  footer  { display: none; }
+
+  header {
+    grid-template-columns: 1fr 0.5fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "top-left top-left"
+      "top-right top-right"
+      "bottom-left bottom-right";
+
+    gap: 6px;
+  }
+
+  .search { justify-content: flex-start; }
+  .search input { flex: 0.45; }
+}
+
+

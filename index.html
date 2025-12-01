@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Elíias</title>
+    <link rel="stylesheet" href="Estilos/base.css" />
+  </head>
+  <body>
+    <header>
+          <!-- Arriba izquierda: título + logo -->
+      <div class="top-left-header">
+          <h1>Presupuesto ELÍAS</h1>
+          <img class="logo" src="Imagenes/logo_elias.png" alt="Logo de la empresa">
+      </div>
+
+      <!-- Arriba derecha: input + botón Buscar -->
+      <div class="top-right-header">
+        <form class="search" action="#" method="get">
+            <input type="text" placeholder="Nombre, apellido o empresa">
+            <button type="submit">Buscar</button>
+        </form>
+      </div>
+
+      <!-- Abajo izquierda: 3 botones -->
+      <div class="bottom-left-header">
+        <nav class="main-nav">
+            <button id="btnClientes">🧑‍🤝‍🧑 Clientes</button>
+            <button id="btnPresupuestos">🧾 Presupuestos</button>
+            <button id="btnNotas">📝 Notas</button>
+        </nav>
+      </div>
+
+      <!-- Abajo derecha: solo emoji -->
+      <div class="bottom-right-header">
+        <button class="config" aria-label="Configuración">⚙️</button>
+      </div>
+      
+    </header>
+
+
+
+    <main>
+      <div class="top-left-main" aria-label="Info del contenido">
+      
+      </div>
+      <div class="top-right-main" aria-label="Navegación secundaria">  
+        <nav id="nav-clientes">
+            <button class="btn-nav" id="btnRegistrarDatos">➕ Registrar</button>
+            <button class="btn-nav" id="btnActualizarDatos">🗂️ Actualizar</button>
+            <button class="btn-nav" id="btnPresupuestarCliente">🧮 Presupuestar</button>
+            <button class="btn-nav" id="btnAnotarCliente">🖋️ Anotar</button>
+            <button class="btn-nav" id="btnInfoCompletaCliente">ℹ️ INFO<br>COMPLETA</button>
+        </nav>
+
+        <nav id="nav-presupuestos">
+            <button class="btn-nav" id="btnNuevoPresupuesto">🧮 Nuevo</button>
+            <button class="btn-nav" id="btnModificarPresupuesto">🛠️ Modificar</button>
+            <button class="btn-nav" id="btnClonarPresupuesto">🔁 Clonar</button>
+            <button class="btn-nav" id="btnAnotacionPresupuesto">📓 Anotación</button>
+            <button class="btn-nav" id="btnDetallesPresupuesto">📖 VER<br>DETALLES</button>
+        </nav>
+
+        <nav id="nav-notas">
+            <button class="btn-nav" id="btnNotaGeneral">🗒️ General</button>
+            <button class="btn-nav" id="btnEditarNota">✏️ Editar</button>
+            <button class="btn-nav" id="btnVincularNota">🔗 Vincular</button>
+            <button class="btn-nav" id="btnNotaCompleta">📘 NOTA<br>COMPLETA</button>
+        </nav> 
+      </div>
+
+      <div class="bottom-left-main" aria-label="Contenido principal">
+      
+      </div>
+
+      <div class="bottom-right-main" aria-label="Info de navegación">
+
+      </div>
+
+    </main>
+
+    <footer>
+      <h2>Pie de página</h2>
+    </footer>
+  <script src="scripts/main.js" defer></script>
+  </body>
+</html>
