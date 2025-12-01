@@ -137,16 +137,11 @@ main {
   padding: 0;
 
   /* 2 columnas: col izq / col der */
-  grid-template-columns: 7fr 1fr;
-  grid-template-rows: repeat(7, auto);
+  grid-template-columns: 6fr 1fr;
+  grid-template-rows: auto  1fr;
   grid-template-areas:
     "top-left       right"
     "bottom-left    right"
-    "bottom-left    right"
-    "bottom-left    right"
-    "bottom-left    right"
-    "bottom-left    right"
-    "bottom-left    right";
 }
 
 /* Asigno cada bloque a su área */
@@ -194,17 +189,10 @@ main {
 }
 
 
-
 /* MAIN abajo a la izquierda*/
 .bottom-left-main {
   background-color: rgb(179, 172, 51);
-  display: flex;
-  flex-direction: row;
-  justify-content:flex-start;  
-  align-items: flex-start;  
 }
-
-
 
 
 
