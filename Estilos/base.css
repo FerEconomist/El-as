@@ -96,15 +96,23 @@ header {
 }
 
 .main-nav { display: flex; gap: 10px; flex-wrap: wrap; }
-.main-nav button{
-  font-size: 1rem;
-  padding: .45rem .8rem;
+
+/* Estilo base de los botones principales */
+.boton-principal {
+  font-size: 0.8rem;
+  padding: .40rem .7rem;
   background: #fff;
   color: #000;
   border: 1px solid #999;
   border-radius: 10px;
   cursor: pointer;
 }
+
+.boton-activo {
+  background-color: #aef5b8;   
+  color: black;                
+}
+
 
 .bottom-right-header{
   display: flex;
@@ -165,7 +173,7 @@ main {
   border: 1px solid #ccc;
   padding: .45rem .8rem;
   border-radius: 10px;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 .btn-nav:hover {
   background: #ededed;
@@ -204,11 +212,6 @@ footer {
   padding: 12px;
   margin: 5PX 10PX;
 }
-
-
-
-
-
 
 
 
