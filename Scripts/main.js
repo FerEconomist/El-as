@@ -1,30 +1,63 @@
-
+// BOTONES
 const btnClientes = document.getElementById("btnClientes");
 const btnPresupuestos = document.getElementById("btnPresupuestos");
 const btnNotas = document.getElementById("btnNotas");
 
+
+// MENÚS
 const navClientes = document.getElementById("nav-clientes");
 const navPresupuestos = document.getElementById("nav-presupuestos");
 const navNotas = document.getElementById("nav-notas");
 
-btnClientes.addEventListener("click", () => {
-  navClientes.style.display = "flex";
-  navPresupuestos.style.display = "none";
-  navNotas.style.display = "none";
-});
+// ARRAY de botones
+const botonesPrincipales = [
+  btnClientes,
+  btnPresupuestos,
+  btnNotas
+];
 
 
-btnPresupuestos.addEventListener("click", () => {
-  navClientes.style.display = "none";
-  navPresupuestos.style.display = "flex";
-  navNotas.style.display = "none";
-});
+// ARRAY de menús laterales
+const menusLaterales = [
+  navClientes,
+  navPresupuestos,
+  navNotas
+];
 
-btnNotas.addEventListener("click", () => {
-  navClientes.style.display = "none";
-  navPresupuestos.style.display = "none";
-  navNotas.style.display = "flex";
-});
+// OCULTAR TODOS
+function ocultarTodosLosMenus() {
+  for (const menu of menusLaterales) {
+    menu.style.display = "none";
+  }
+}
+
+// CAMBIAR COLOR BOTON
+function activarBoton (boton) {
+  // 1. Quitar color a todos
+  for (const b of botonesPrincipales) {
+    b.classList.remove("boton-activo");
+  }
+  // 2. Activar solo el que corresponde
+  boton.classList.add("boton-activo");
+}
+
+// MOSTRAR EL ELEGIDO
+function mostrarMenu(menuElegido, botonPresionado) {
+  ocultarTodosLosMenus();
+  activarBoton(botonPresionado);
+  menuElegido.style.display = "flex";
+}
+
+// EVENTOS
+btnClientes.addEventListener("click", () => mostrarMenu(navClientes, btnClientes));
+btnPresupuestos.addEventListener("click", () => mostrarMenu(navPresupuestos, btnPresupuestos));
+btnNotas.addEventListener("click", () => mostrarMenu(navNotas, btnNotas));
+
+let miTemporizador = setTimeout(() => {
+  console.log("¡Nunca me verás!");
+}, 5000); // Planificado para 5 segundos
+
+
 
 
 
