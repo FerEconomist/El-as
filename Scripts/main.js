@@ -9,6 +9,9 @@ const navClientes = document.getElementById("nav-clientes");
 const navPresupuestos = document.getElementById("nav-presupuestos");
 const navNotas = document.getElementById("nav-notas");
 
+// Contenedores: 
+const contSliderLateral = document.querySelector(".right-main");
+
 // ARRAY de botones
 const botonesPrincipales = [
   btnClientes,
@@ -45,6 +48,9 @@ function activarBoton (boton) {
 function mostrarMenu(menuElegido, botonPresionado) {
   ocultarTodosLosMenus();
   activarBoton(botonPresionado);
+  contSliderLateral.classList.remove("right-main");
+  contSliderLateral.classList.add("right-main-card");
+
   menuElegido.style.display = "flex";
 }
 
