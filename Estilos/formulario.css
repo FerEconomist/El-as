@@ -1,0 +1,185 @@
+/* ==========================
+   OVERLAY
+========================== */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: var(--z-overlay);
+}
+
+/* ==========================
+   VENTANA FORMULARIO
+========================== */
+
+.form-ventana {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: min(900px, 92vw);
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  background: #fff;
+  border-radius: 12px;
+
+  z-index: var(--z-form);
+}
+
+/* ==========================
+   HEADER FORM
+========================== */
+
+.form-header {
+  background: var(--color-header);
+  color: #ffffff;
+  padding: 1rem 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-header h2 {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.btn-cerrar-form {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+/* ==========================
+   FORM BODY
+========================== */
+
+.form-cliente {
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+fieldset {
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+legend {
+  padding: 0 .6rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+  margin-bottom: .7rem;
+  font-size: .95rem;
+}
+
+input {
+  padding: .5rem .7rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+}
+
+/* ==========================
+   CAMPOS PERSONALIZADOS
+========================== */
+
+.campos-personalizados {
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 1rem;
+  background: #fafbff;
+}
+
+.campos-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.campos-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.btn-agregar-campo {
+  background: #2f6fed;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: .4rem .9rem;
+  cursor: pointer;
+  font-size: .9rem;
+}
+
+.lista-campos {
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+}
+
+.campo-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: .6rem;
+  align-items: center;
+  background: #ffffff;
+  padding: .8rem;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.btn-quitar-campo {
+  background: #e02424;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: .4rem .7rem;
+  cursor: pointer;
+  font-size: .85rem;
+}
+
+/* ==========================
+   FOOTER FORM
+========================== */
+
+.form-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: .8rem;
+}
+
+.btn-primario {
+  background: var(--color-header);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: .5rem 1.2rem;
+  cursor: pointer;
+}
+
+.btn-secundario {
+  background: #eeeeee;
+  border: none;
+  border-radius: 10px;
+  padding: .5rem 1.2rem;
+  cursor: pointer;
+}
+
+body.modal-abierto {
+  overflow: hidden;
+}

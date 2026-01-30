@@ -1,0 +1,128 @@
+
+
+  <!-- =========================
+       FORMULARIO CLIENTE
+  ========================== -->
+  <section class="form-ventana form-cliente-ventana" hidden>
+
+    <header class="form-header">
+      <h2>Nuevo cliente</h2>
+      <button type="button" class="btn-cerrar-form" aria-label="Cerrar">✖</button>
+    </header>
+
+    <form class="form-cliente">
+
+      <!-- ======================
+           DATOS PRINCIPALES
+      ======================= -->
+      <fieldset>
+        <legend>Datos principales</legend>
+
+        <label>
+          Nombre *
+          <input type="text" name="nombre" required>
+        </label>
+
+        <label>
+          Apellido *
+          <input type="text" name="apellido" required>
+        </label>
+
+        <label>
+          Empresa
+          <input type="text" name="empresa">
+        </label>
+      </fieldset>
+
+      <!-- ======================
+           CONTACTO
+      ======================= -->
+      <fieldset>
+        <legend>Contacto</legend>
+
+        <label>
+          Teléfono
+          <input type="text" name="telefono">
+        </label>
+
+        <label>
+          Email
+          <input type="email" name="email">
+        </label>
+      </fieldset>
+
+      <!-- ======================
+           DIRECCIÓN
+      ======================= -->
+      <fieldset>
+        <legend>Dirección</legend>
+
+        <label>
+          Calle
+          <input type="text" name="calle">
+        </label>
+
+        <label>
+          Número
+          <input type="text" name="numero">
+        </label>
+
+        <label>
+          Piso
+          <input type="text" name="piso">
+        </label>
+
+        <label>
+          Barrio
+          <input type="text" name="barrio">
+        </label>
+
+        <label>
+          Localidad
+          <input type="text" name="localidad">
+        </label>
+      </fieldset>
+
+      <!-- ======================
+           CAMPOS PERSONALIZADOS
+      ======================= -->
+      <section class="campos-personalizados">
+
+        <div class="campos-header">
+          <h3>Campos personalizados</h3>
+          <button type="button" class="btn-agregar-campo">
+            ➕ Agregar campo
+          </button>
+        </div>
+
+        <div class="lista-campos" id="listaCampos">
+
+          <div class="campo-item">
+            <input
+              type="text"
+              name="campo_nombre[]"
+              placeholder="Nombre del campo"
+            >
+            <input
+              type="text"
+              name="campo_valor[]"
+              placeholder="Valor"
+            >
+            <button type="button" class="btn-quitar-campo">
+              Quitar
+            </button>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ======================
+           ACCIONES
+      ======================= -->
+      <footer class="form-footer">
+        <button type="submit" class="btn-primario">Guardar</button>
+        <button type="button" class="btn-secundario btn-limpiar">Limpiar</button>
+        <button type="button" class="btn-secundario">Cancelar</button>
+      </footer>
+    </form>
+  </section>
