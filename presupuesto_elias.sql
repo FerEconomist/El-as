@@ -5,6 +5,23 @@ CREATE DATABASE IF NOT EXISTS presupuesto_elias
 USE presupuesto_elias;
 
 -- =========================================================
+-- 0) USUARIO
+-- =========================================================
+CREATE TABLE IF NOT EXISTS usuario_unico (
+  id_usuario      INT AUTO_INCREMENT PRIMARY KEY,
+  nombre          VARCHAR(80) NOT NULL,
+  apellido        VARCHAR(80) NOT NULL,
+  empresa         VARCHAR(120),
+  telefono        VARCHAR(30),
+  email           VARCHAR(150),
+
+  created_at      DATETIME DEFAULT CURRENT_TIMESTAMP,
+  updated_at      DATETIME DEFAULT CURRENT_TIMESTAMP
+                  ON UPDATE CURRENT_TIMESTAMP
+);
+
+
+-- =========================================================
 -- 1) CLIENTES
 -- =========================================================
 CREATE TABLE IF NOT EXISTS clientes (
