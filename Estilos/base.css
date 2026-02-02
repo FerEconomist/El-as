@@ -435,6 +435,100 @@ footer a:hover {
 
 
 
+/* =========================
+   CONFIG MENU
+========================= */
+
+.bottom-right-header {
+  position: relative;
+}
+
+/* menú desplegable */
+.config-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+
+  background: var(--color-panel-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+
+  min-width: 220px;
+  padding: 0.5rem;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: var(--z-config);
+}
+
+
+/* enlaces del menú (Usuarios, y futuros links) */
+.config-menu a.config-link {
+  display: block;
+  width: 100%;
+
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+
+  text-decoration: none;
+  font-size: 0.95rem;
+  color: var(--color-text);
+
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.config-menu a.config-link:hover {
+  background: var(--color-btn-active);
+}
+
+
+/* lista */
+.config-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* items */
+.config-menu li + li {
+  margin-top: 0.4rem;
+}
+
+/* botones */
+.config-menu button {
+  width: 100%;
+  background: transparent;
+  border: none;
+
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+
+  text-align: left;
+  font-size: 0.95rem;
+  color: var(--color-text);
+
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.config-menu button:hover {
+  background: var(--color-btn-active);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

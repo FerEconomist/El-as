@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Usuarios - Elíias</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="Estilos/base.css">
+  <link rel="stylesheet" href="Estilos/usuarios.css">
+</head>
+
+<body>
+
+<header class="app-header">
+  <h1 class="app-title">Sección Usuarios</h1>
+  <p class="app-subtitle">Gestión de usuarios de la aplicación</p>
+</header>
+
+<main class="usuarios-main">
+
+  <!-- =========================
+       FORMULARIO USUARIOS
+  ========================== -->
+  <section class="usuarios-form">
+
+    <div class="usuarios-form__header">
+      <h2>Registro</h2>
+    </div>
+
+    <div class="usuarios-form__actions">
+      <button type="button">Limpiar</button>
+      <button type="button">Guardar</button>
+    </div>
+
+    <div class="usuarios-form__left">
+      <input type="text" placeholder="Nombre">
+      <input type="text" placeholder="Apellido">
+      <input type="text" placeholder="Empresa">
+      <input type="text" placeholder="Profesión / Oficio">
+    </div>
+
+    <div class="usuarios-form__right">
+      <input type="text" placeholder="Teléfono">
+      <input type="text" placeholder="Teléfono alternativo">
+      <input type="email" placeholder="Email">
+      <input type="text" placeholder="CUIL / CUIT">
+    </div>
+
+  </section>
+
+  <!-- =========================
+       TABLA USUARIOS
+  ========================== -->
+  <section class="usuarios-table">
+
+    <div class="usuarios-table__header">
+      <h2>Usuarios Registrados</h2>
+    </div>
+
+    <div class="usuarios-table__actions">
+      <button type="button">Actualizar</button>
+      <button type="button">Eliminar</button>
+    </div>
+
+    <div class="usuarios-table__body">
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Empresa</th>
+            <th>Profesión</th>
+            <th>Teléfono</th>
+            <th>Tel. Alt</th>
+            <th>Email</th>
+            <th>CUIL/CUIT</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- filas dinámicas -->
+        </tbody>
+      </table>
+      <div class="usuarios-table__empty">
+        <p>No hay usuarios registrados.</p>
+        <span>Utilizá el formulario superior para agregar uno nuevo.</span>
+      </div>
+    </div>
+
+  </section>
+
+</main>
+
+<footer>
+  <p>Presupuesto ELÍAS - Todos los derechos reservados © 2024</p>
+</footer>
+ <!-- JS por módulo -->
+<script src="Scripts/usuarios.js" defer></script>
+</body>
+</html>

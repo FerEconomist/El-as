@@ -5,15 +5,18 @@ CREATE DATABASE IF NOT EXISTS presupuesto_elias
 USE presupuesto_elias;
 
 -- =========================================================
--- 0) USUARIO
+-- 0) USUARIOS
 -- =========================================================
-CREATE TABLE IF NOT EXISTS usuario_unico (
-  id_usuario      INT AUTO_INCREMENT PRIMARY KEY,
-  nombre          VARCHAR(80) NOT NULL,
-  apellido        VARCHAR(80) NOT NULL,
-  empresa         VARCHAR(120),
-  telefono        VARCHAR(30),
-  email           VARCHAR(150),
+CREATE TABLE IF NOT EXISTS usuario (
+  id_usuario        INT AUTO_INCREMENT PRIMARY KEY,
+  nombre            VARCHAR(80) NOT NULL,
+  apellido          VARCHAR(80) NOT NULL,
+  profesion_oficio  VARCHAR(80),
+  empresa           VARCHAR(120),
+  telefono          VARCHAR(30),
+  telefono_alt      VARCHAR(30),
+  email             VARCHAR(150),
+  cuil_cuit         VARCHAR(30),
 
   created_at      DATETIME DEFAULT CURRENT_TIMESTAMP,
   updated_at      DATETIME DEFAULT CURRENT_TIMESTAMP
@@ -118,10 +121,9 @@ CREATE TABLE IF NOT EXISTS pies_presupuesto (
   texto             TEXT NOT NULL,
   es_plantilla      TINYINT(1) DEFAULT 0,
 
-  CONSTRAINT fk_pies_presupuesto_presupuesto
-    FOREIGN KEY (id_presupuesto)
-    REFERENCES presupuestos(id_presupuesto)
-    ON DELETE SET NULL
+  created_at      DATETIME DEFAULT CURRENT_TIMESTAMP,
+  updated_at      DATETIME DEFAULT CURRENT_TIMESTAMP
+                  ON UPDATE CURRENT_TIMESTAMP
 );
 
 -- =========================================================

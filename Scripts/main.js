@@ -85,6 +85,43 @@ const btnEditarNota   = document.getElementById("btnEditarNota");
 const btnVincularNota = document.getElementById("btnVincularNota");
 const btnNotaCompleta = document.getElementById("btnNotaCompleta");
 
+
+// =========================
+// CONFIG MENU (mínimo)
+// =========================
+
+const btnConfig   = document.querySelector(".config");
+const configMenu  = document.querySelector(".config-menu");
+
+// abrir / cerrar con el botón
+btnConfig.addEventListener("click", (e) => {
+  e.stopPropagation(); // evita que se cierre inmediatamente
+  configMenu.hidden = !configMenu.hidden;
+});
+
+// cerrar al hacer click afuera
+document.addEventListener("click", () => {
+  configMenu.hidden = true;
+});
+
+// evitar que clicks dentro del menú lo cierren
+configMenu.addEventListener("click", (e) => {
+  e.stopPropagation();
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // EVENTO: ABRIR FORMULARIO
 if (btnRegistrarCliente) {
   btnRegistrarCliente.addEventListener("click", () => {
@@ -95,3 +132,5 @@ if (btnRegistrarCliente) {
 
 document.querySelectorAll(".overlay").length
 document.querySelectorAll(".form-cliente-ventana").length
+
+
