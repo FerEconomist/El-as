@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Usuarios - Elíias</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="Estilos/base.css">
+  <link rel="stylesheet" href="Estilos/notas_pie.css">
+</head>
+
+<body>
+
+<header class="app-header">
+  <h1 class="app-title">Sección Notas de Pie</h1>
+  <p class="app-subtitle">Gestión de notas de pie de página para los presupuestos</p>
+</header>
+
+<main class="notas-pie-main">
+
+  <!-- =========================
+       FORMULARIO NOTAS DE PIE
+  ========================== -->
+  <section class="notas-pie-form">
+
+    <div class="notas-pie-form__header">
+      <h2>Registro</h2>
+    </div>
+
+    <div class="notas-pie-form__actions">
+      <button type="button">Limpiar</button>
+      <button type="button">Guardar</button>
+    </div>
+    <div class="notas-pie-form__body">
+        <div class="field field-title">
+            <input type="text" placeholder="Título">
+        </div>
+
+        <div class="field field-description">
+            <textarea placeholder="Descripción"></textarea>
+        </div>
+    </div>
+
+
+  </section>
+
+  <!-- =========================
+       TABLA NOTAS DE PIE
+  ========================== -->
+  <section class="notas-pie-table">
+
+    <div class="notas-pie-table__header">
+      <h2>Notas de Pie Registradas</h2>
+    </div>
+
+    <div class="notas-pie-table__actions">
+      <button type="button">Actualizar</button>
+      <button type="button">Eliminar</button>
+    </div>
+
+    <div class="notas-pie-table__body">
+      <table>
+        <thead>
+          <tr>
+            <th>Título</th>
+            <th>Descripción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- filas dinámicas -->
+        </tbody>
+      </table>
+      <div class="notas-pie-table__empty">
+        <p>No hay notas de pie registradas.</p>
+        <span>Utilizá el formulario superior para agregar una nueva.</span>
+      </div>
+    </div>
+
+  </section>
+
+</main>
+
+<footer>
+  <p>Presupuesto ELÍAS - Todos los derechos reservados © 2024</p>
+</footer>
+ <!-- JS por módulo -->
+<script src="Scripts/notas_pie.js" defer></script>
+</body>
+</html>

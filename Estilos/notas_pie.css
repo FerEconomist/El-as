@@ -1,0 +1,261 @@
+/* Reset mínimo */
+* {
+  box-sizing: border-box;
+}
+
+/* --- Grid general: header, main y footer --- */
+body {
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+header,
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =========================
+   HEADER APP
+========================= */
+
+.app-header {
+  padding: 2rem 1.5rem;
+  background: var(--color-primary, #5a8dee);
+  color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.app-title {
+  margin: 0;
+  font-size: 3rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.app-subtitle {
+  margin: 0;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+
+
+
+/* =========================
+   MAIN NOTAS DE PIE
+========================= */
+
+.notas-pie-main {
+  margin: 1rem 10rem;
+  padding: 2rem;
+  background: var(--color-bg-main, #f5f7fb);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "top"
+    "bottom";
+  gap: 2rem;
+}
+
+/* Asignación correcta */
+.notas-pie-form  { grid-area: top; }
+.notas-pie-table { grid-area: bottom; }
+
+
+/* =========================
+   FORMULARIO
+========================= */
+
+.notas-pie-form {
+  background: #ffffff;
+  border-radius: 12px;
+  margin: 0.5rem 4rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border-top: 4px solid var(--color-primary, #5a8dee);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "top-left    top-right"
+    "bottom      bottom";
+  gap: 1rem;
+}
+
+.notas-pie-form__header  { grid-area: top-left; }
+.notas-pie-form__actions { grid-area: top-right; }
+.notas-pie-form__body    { grid-area: bottom; }
+
+
+/* =========================
+   COLUMNAS DEL FORM
+========================= */
+.notas-pie-form__body {
+  display: grid;
+  grid-template-columns: 1fr 3fr; /* textarea más ancho */
+  align-items: start;             /* 🔑 alineación superior */
+  gap: 1rem;
+}
+
+.field input {
+  height: 40px;       /* altura estándar */
+}
+
+.field textarea {
+  min-height: 90px;   /* más alto */
+  resize: vertical;   /* opcional */
+}
+
+.notas-pie-form__body input,
+.notas-pie-form__body textarea {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.notas-pie-form__actions {
+  display: flex;
+  justify-content: flex-end;   
+  align-items: center;
+  gap: 1rem;                    
+}
+
+.notas-pie-form__actions button {
+  padding: 0.6rem 1.4rem;        /* 👈 más grandes */
+  font-size: 0.95rem;
+  font-weight: 500;
+
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+
+
+/* =========================
+   TABLA
+========================= */
+
+.notas-pie-table {
+  margin-top: 2rem;
+  background: #ffffff;
+  border-radius: 12px;
+  margin: 0.5rem 4rem;
+  padding: 1.5rem;
+  border-top: 4px solid #2d3e50;
+
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "top-left  top-right"
+    "bottom    bottom";
+  gap: 1rem;
+}
+
+.notas-pie-table__header  { grid-area: top-left; }
+.notas-pie-table__actions { grid-area: top-right; }
+.notas-pie-table__body    { grid-area: bottom; }
+
+
+
+
+.notas-pie-form__header h2,
+.notas-pie-table__header h2 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+
+.notas-pie-table table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+
+.notas-pie-table tbody td {
+  padding: 0.65rem 0.75rem;
+  font-size: 0.88rem;
+
+  border-bottom: 1px solid #e6e9ef;
+}
+
+.notas-pie-table tbody tr:nth-child(even) {
+  background-color: #f7f9fc;
+}
+
+.notas-pie-table tbody tr:hover {
+  background-color: #eef3ff;
+}
+
+.notas-pie-table__body {
+  overflow-x: auto;
+}
+
+.notas-pie-table__actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.notas-pie-table__actions button {
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+/* =========================
+   SELECCIÓN DE FILAS
+========================= */
+
+.notas-pie-table tbody tr {
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.notas-pie-table tbody tr.selected {
+  background-color: #dbe7ff;
+}
+
+
+
+
+/* =========================
+   MENSAJE TABLA VACÍA
+========================= */
+
+.notas-pie-table__empty {
+  margin-top: 1.5rem;
+  padding: 2rem;
+
+  text-align: center;
+
+  border: 1px dashed #d0d6e0;
+  border-radius: 8px;
+
+  color: #5f6b7a;
+  background-color: #fafbfe;
+}
+
+.notas-pie-table__empty p {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.notas-pie-table__empty span {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
