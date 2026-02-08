@@ -204,6 +204,9 @@ footer {
   cursor: pointer;
 }
 
+
+
+
 /* =========================
    SELECCIÓN DE FILAS
 ========================= */
@@ -217,7 +220,26 @@ footer {
   background-color: #dbe7ff;
 }
 
+/* =========================
+   BOTONES DESHABILITADOS
+========================= */
+.usuarios-form__actions button:disabled,
+.usuarios-table__actions button:disabled {
+  background-color: #bfc5ce; /* más oscuro que #d1d5db */
+  color: #495463;
+  border: 1px solid #9aa3af;
 
+  cursor: not-allowed;       /* 🚫 no manito */
+  pointer-events: none;      /* sin hover ni click */
+  box-shadow: none;
+  opacity: 1;
+}
+
+.usuarios-form__actions button:disabled:hover,
+.usuarios-table__actions button:disabled:hover {
+  background-color: #bfc5ce;
+  filter: none;
+}
 
 
 /* =========================

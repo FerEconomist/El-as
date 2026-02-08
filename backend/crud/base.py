@@ -7,26 +7,33 @@ class BaseCRUD:
         self.db = ConexionDB()
 
     def _get_connection(self):
-        return self.db.conectar()
+        conn = self.db.conectar()
+        if conn is None:
+            raise RuntimeError("No se pudo conectar a la base de datos")
+        return conn
 
     def _consultar(self, query, params=None, fetch_one=False):
-        try:
-            with self._get_connection() as conn:
-                with conn.cursor() as cursor:
-                    cursor.execute(query, params or ())
-                    if fetch_one:
-                        return cursor.fetchone()
-                    return cursor.fetchall()
-        except mysql.connector.Error as err:
-            print(f"Error al consultar la base de datos: {err}")
-            return None
+        """
+        🧠 Notas importantes:
+        - cursor(dictionary=True) devuelve dicts (ideal para FastAPI + response_model)
+        - fetch_one: devuelve 1 dict o None
+        - fetch_all: devuelve lista de dicts ([])
+        """
+        with self._get_connection() as conn:
+            cursor = conn.cursor(dictionary=True)
+            cursor.execute(query, params or ())
+            if fetch_one:
+                return cursor.fetchone()
+            return cursor.fetchall()
 
     def _ejecutar(self, query, params=None):
-        try:
-            with self._get_connection() as conn:
-                with conn.cursor() as cursor:
-                    cursor.execute(query, params or ())
-                    conn.commit()
-        except mysql.connector.Error as err:
-            print(f"Error al ejecutar consulta: {err}")
-            return None
+        """
+        🧠 Notas importantes:
+        - Devuelve lastrowid para INSERT
+        - Devuelve rowcount útil para UPDATE/DELETE
+        """
+        with self._get_connection() as conn:
+            cursor = conn.cursor()
+            cursor.execute(query, params or ())
+            conn.commit()
+            return cursor.lastrowid, cursor.rowcount
