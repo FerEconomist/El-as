@@ -119,7 +119,6 @@ CREATE TABLE IF NOT EXISTS pies_presupuesto (
   id_presupuesto    INT NULL,        -- NULL = plantilla reutilizable
   titulo            VARCHAR(120) NOT NULL,
   texto             TEXT NOT NULL,
-  es_plantilla      TINYINT(1) DEFAULT 0,
 
   created_at      DATETIME DEFAULT CURRENT_TIMESTAMP,
   updated_at      DATETIME DEFAULT CURRENT_TIMESTAMP
